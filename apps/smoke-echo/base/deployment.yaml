@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smoke-echo
+  labels:
+    app.kubernetes.io/name: smoke-echo
+    app.kubernetes.io/part-of: gitops-smoke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: smoke-echo
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: smoke-echo
+        app.kubernetes.io/part-of: gitops-smoke
+    spec:
+      containers:
+        - name: echo
+          image: traefik/whoami:v1.10.1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "25m"
+              memory: "32Mi"
+            limits:
+              cpu: "100m"
+              memory: "100Mi"

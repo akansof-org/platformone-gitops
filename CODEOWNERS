@@ -1,0 +1,6 @@
+* @akansof-org/platformone
+
+/clusters/ @akansof-org/platformone @akansof-org/sre
+/apps/ @akansof-org/platformone
+/policies/ @akansof-org/security
+/observability/ @akansof-org/sre

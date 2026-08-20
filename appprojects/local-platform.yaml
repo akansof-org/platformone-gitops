@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: local-platform
+  namespace: gitops
+spec:
+  description: Local PlatformOne GitOps project for bootstrap and smoke-test applications
+
+  sourceRepos:
+    - "*"
+    # Should later be something like https://github.com/<org>/platformone-gitops.git
+
+  destinations:
+    - namespace: apps
+      server: https://kubernetes.default.svc
+    - namespace: gitops
+      server: https://kubernetes.default.svc
+    - namespace: sandbox
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

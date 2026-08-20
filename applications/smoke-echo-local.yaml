@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: smoke-echo-local
+  namespace: gitops
+spec:
+  project: local-platform
+
+  source:
+    repoURL: https://github.com/akansof-org/platformone-gitops.git
+    targetRevision: HEAD
+    path: apps/smoke-echo/overlays/local
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
