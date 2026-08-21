@@ -5,6 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: smoke-echo
     app.kubernetes.io/part-of: gitops-smoke
+    platformone.io/owner: platform-engineering
 spec:
   rules:
     - host: smoke-echo.platformone.local

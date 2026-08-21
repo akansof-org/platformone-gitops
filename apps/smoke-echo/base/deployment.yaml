@@ -5,6 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: smoke-echo
     app.kubernetes.io/part-of: gitops-smoke
+    platformone.io/owner: platform-engineering
 spec:
   replicas: 1
   selector:
@@ -15,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/name: smoke-echo
         app.kubernetes.io/part-of: gitops-smoke
+        platformone.io/owner: platform-engineering
     spec:
       containers:
         - name: echo
