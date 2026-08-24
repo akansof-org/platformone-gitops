@@ -4,3 +4,7 @@ namespace: apps
 resources:
   - ../../base
   - ingress.yaml
+patches:
+  - path: patch-replicas.yaml
+  - path: patch-env.yaml
+  - path: patch-resources.yaml

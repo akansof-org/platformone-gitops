@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smoke-echo
+spec:
+  template:
+    spec:
+      containers:
+        - name: echo
+          env:
+            - name: APP_ENV
+              value: local
+            - name: PLATFORMONE_ENVIRONMENT
+              value: local

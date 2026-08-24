@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/part-of: gitops-smoke
     platformone.io/owner: platform-engineering
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: smoke-echo
@@ -23,10 +22,3 @@ spec:
           image: traefik/whoami:v1.10.1
           ports:
             - containerPort: 80
-          resources:
-            requests:
-              cpu: 25m
-              memory: 64Mi
-            limits:
-              cpu: "100m"
-              memory: "100Mi"
