@@ -9,7 +9,7 @@ spec:
         - name: echo
           resources:
             requests:
-              cpu: 25m
+              cpu: 24m
               memory: 64Mi
             limits:
               cpu: 100m
