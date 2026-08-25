@@ -5,6 +5,7 @@ GitOps configuration, environment overlays, and deployment coordination for Akan
 ## Documentation
 
 - [Repository structure](docs/repository-structure.md)
+- [Rollback options](docs/rollback.md)
 
 ## Ownership
 
